@@ -205,6 +205,8 @@ print(os.getenv("OPENAI_API_KEY"))
 Shravani Kadam
 
 
+## Output
+<img width="1919" height="1019" alt="Screenshot 2026-03-24 135803" src="https://github.com/user-attachments/assets/7501933d-939d-4a17-917e-5df19b20baf8" />
 
 
 
