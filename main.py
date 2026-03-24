@@ -1,6 +1,6 @@
-# ============================================
+
 # 1. LOAD ENV VARIABLES
-# ============================================
+
 
 from dotenv import load_dotenv
 import os
@@ -15,22 +15,20 @@ if not api_key:
 print("✅ NVIDIA KEY LOADED")
 
 
-# ============================================
+
 # 2. SUPPRESS WARNINGS
-# ============================================
 
 import warnings
 warnings.filterwarnings("ignore")
 
 
-# ============================================
+
 # 3. IMPORT TOOLS (FIXED)
-# ============================================
 
 from typing import Literal, Union
 from langchain_core.tools import tool
 
-# ✅ CORRECT IMPORTS
+
 from deep_agents_from_scratch.files import (
     ls,
     read_file,
@@ -45,9 +43,9 @@ from deep_agents_from_scratch.todo import (
 )
 
 
-# ============================================
+
 # 4. CALCULATOR TOOL
-# ============================================
+
 
 @tool
 def calculator(
@@ -72,9 +70,9 @@ def calculator(
         return {"error": "Invalid operation"}
 
 
-# ============================================
+
 # 5. MODEL (NVIDIA)
-# ============================================
+
 
 from langchain_openai import ChatOpenAI
 
@@ -86,9 +84,9 @@ lc_model = ChatOpenAI(
 )
 
 
-# ============================================
+
 # 6. CREATE AGENT
-# ============================================
+
 
 from langchain.agents import create_agent
 
@@ -120,9 +118,9 @@ agent = create_agent(
 ).with_config({"recursion_limit": 20})
 
 
-# ============================================
+
 # 7. RUN AGENT
-# ============================================
+
 
 print("\n=== AGENT OUTPUT ===\n")
 
@@ -143,7 +141,7 @@ for msg in agent_result["messages"]:
 
 # from langchain.agents import create_agent
 #
-# # 🔢 MATH AGENT (focused on calculator)
+#  MATH AGENT (focused on calculator)
 # math_agent = create_agent(
 #     model=lc_model,
 #     tools=[calculator],
@@ -152,7 +150,7 @@ for msg in agent_result["messages"]:
 # ).with_config({"recursion_limit": 10})
 
 
-# 📚 RESEARCH AGENT (focused on knowledge)
+#  RESEARCH AGENT (focused on knowledge)
 # research_agent = create_agent(
 #     model=lc_model,
 #     tools=[web_search],
@@ -169,7 +167,7 @@ for msg in agent_result["messages"]:
 #     print(f"\n=== {name} FINAL OUTPUT ===\n")
 #
 #     if not isinstance(result, dict):
-#         print("❌ ERROR: result is not a dict")
+#         print(" ERROR: result is not a dict")
 #         print("Type:", type(result))
 #         continue
 #
@@ -179,9 +177,8 @@ for msg in agent_result["messages"]:
 #             break
 
 
-# ============================================
+
 # 8. DIRECT NVIDIA API CALL
-# ============================================
 
 from openai import OpenAI
 
@@ -202,7 +199,7 @@ completion = client.chat.completions.create(
 )
 
 if not completion.choices:
-    print("❌ No response")
+    print(" No response")
 else:
     message = completion.choices[0].message
 
