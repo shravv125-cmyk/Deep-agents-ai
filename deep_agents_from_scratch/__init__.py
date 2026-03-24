@@ -1,12 +1,8 @@
-
-
 def state():
     return None
 
-
 def todo_tools():
     return None
-
 
 def file_tools():
     return None
