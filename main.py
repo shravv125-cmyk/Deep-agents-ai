@@ -78,7 +78,7 @@ from langchain_openai import ChatOpenAI
 
 lc_model = ChatOpenAI(
     model="openai/gpt-oss-120b",
-    api_key="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",
+    api_key="<put your api key>",
     base_url="https://integrate.api.nvidia.com/v1",
     temperature=0,
 )
@@ -162,7 +162,7 @@ for msg in agent_result["messages"]:
 #     ("MATH AGENT", math_agent),
 #     ("RESEARCH AGENT", research_agent),
 # ]
-#
+
 # for name, result in results:
 #     print(f"\n=== {name} FINAL OUTPUT ===\n")
 #
@@ -184,7 +184,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="https://integrate.api.nvidia.com/v1",
-    api_key="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"
+    api_key="<put your api key>"
 )
 
 print("\n=== DIRECT MODEL OUTPUT ===\n")
